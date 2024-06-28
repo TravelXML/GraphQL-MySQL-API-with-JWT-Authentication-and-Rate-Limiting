@@ -1,7 +1,9 @@
+Here's the updated `README.md` file with the added sections for pagination and rate limiting, along with detailed explanations and Table of Contents:
+
+```markdown
 # GraphQL MySQL API with JWT Authentication and Rate Limiting
 
 A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. This project leverages Docker for containerization, providing a seamless development and deployment experience. Key features include JWT-based authentication, comprehensive rate limiting, and support for dynamic queries across multiple database tables.
-
 
 ## Features
 
@@ -20,7 +22,6 @@ A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. Thi
 - **Ease of Use**: Simple setup and deployment with Docker.
 - **Community and Support**: Join a growing community of developers and gain support through GitHub Issues and Pull Requests.
 
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -31,6 +32,7 @@ A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. Thi
 - [Running the Service](#running-the-service)
 - [JWT Token Handling](#jwt-token-handling)
 - [Rate Limiting](#rate-limiting)
+- [Pagination](#pagination)
 - [API Usage](#api-usage)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
@@ -145,6 +147,14 @@ The token is validated in `api.php` by decoding it and checking its validity.
 
 Rate limiting is implemented using Redis to ensure that each user cannot exceed a defined number of requests per second.
 
+### Why Rate Limiting?
+
+Rate limiting helps to protect your API from abuse and ensures fair usage among users. It prevents a single user from overwhelming the system, thus maintaining the performance and availability of the API for all users.
+
+### Implementation Strategy
+
+We use Redis to store and manage the request counts for each user. The rate limiter checks the number of requests made by a user within a specified time window and allows or blocks the request based on the configured limits.
+
 ### RateLimiter.php
 
 ```php
@@ -184,7 +194,19 @@ class RateLimiter {
 }
 ```
 
-## API Usage
+## Pagination
+
+Pagination is essential for managing large datasets by breaking them down into smaller, more manageable chunks. This improves performance and usability by allowing users to fetch data page by page.
+
+### Why Pagination?
+
+- **Performance**: Reduces the load on the server and database by limiting the amount of data processed and sent over the network.
+- **User Experience**: Improves the user experience by providing data in smaller, more digestible chunks.
+- **Scalability**: Enables the API to handle large datasets efficiently.
+
+### Implementation Strategy
+
+We implement pagination using page numbers and a fixed page size. The client specifies the page number and the number of items per page, and the server returns the corresponding subset of data.
 
 ### Example Query
 
@@ -202,11 +224,17 @@ class RateLimiter {
 }
 ```
 
+## API Usage
+
 ### Making a Request
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer your-jwt-token" --data '{ "query": "{ products(page: 1) { products { productCode, productName }, total, page, token } }" }' http://localhost/api.php
 ```
+
+### Response
+
+![image](https://github.com/TravelXML/GraphQL-MySQL-API-with-JWT-Authentication-and-Rate-Limiting/assets/8361967/4e51fde7-fd8f-456b-b886-f04f8264f20e)
 
 ## Troubleshooting
 
