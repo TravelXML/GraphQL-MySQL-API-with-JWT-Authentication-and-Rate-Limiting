@@ -1,6 +1,3 @@
-Here's the updated `README.md` file with the added request example for fetching customers:
-
-```markdown
 # GraphQL MySQL API with JWT Authentication and Rate Limiting
 
 A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. This project leverages Docker for containerization, providing a seamless development and deployment experience. Key features include JWT-based authentication, comprehensive rate limiting, and support for dynamic queries across multiple database tables.
