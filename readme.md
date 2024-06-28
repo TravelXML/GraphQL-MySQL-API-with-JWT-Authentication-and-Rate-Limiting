@@ -1,3 +1,6 @@
+Here's the updated `README.md` file with the added request example for fetching customers:
+
+```markdown
 # GraphQL MySQL API with JWT Authentication and Rate Limiting
 
 A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. This project leverages Docker for containerization, providing a seamless development and deployment experience. Key features include JWT-based authentication, comprehensive rate limiting, and support for dynamic queries across multiple database tables.
@@ -119,6 +122,13 @@ return [
     curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer your-jwt-token" --data '{ "query": "{ products(page: 1) { products { productCode, productName }, total, page, token } }" }' http://localhost/api.php
     ```
 
+    ```bash
+    curl --location 'http://localhost/api.php' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxNzE5NTk3MTU0LCJuYmYiOjE3MTk1OTcxNTQsInN1YiI6InVzZXIxMjMifQ.paf6YFnETH10TOGqZ5MKvOkZc1T6gIEwjL3tspXdgGI' \
+    --data '{"query":"{ customers(page: 1) { customers { customerNumber, customerName, phone }, total, page, token } }","variables":{}}'
+    ```
+
 ## JWT Token Handling
 
 The JWT tokens are used to authenticate API requests. The `JwtHandler.php` file handles the creation and validation of these tokens.
@@ -223,10 +233,52 @@ We implement pagination using page numbers and a fixed page size. The client spe
 
 ## API Usage
 
+### Example Query for Products
+
+```graphql
+{
+  products(page: 1) {
+    products {
+      productCode
+      productName
+    }
+    total
+    page
+    token
+  }
+}
+```
+
+### Example Query for Customers
+
+```graphql
+{
+  customers(page: 1) {
+    customers {
+      customerNumber
+      customerName
+      phone
+    }
+    total
+    page
+    token
+  }
+}
+```
+
 ### Making a Request
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer your-jwt-token" --data '{ "query": "{ products(page: 1) { products { productCode, productName }, total, page, token } }" }' http://localhost/api.php
+```
+
+```bash
+curl --location 'http://localhost/api.php' \
+--header 'Content-Type
+
+: application/json' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxNzE5NTk3MTU0LCJuYmYiOjE3MTk1OTcxNTQsInN1YiI6InVzZXIxMjMifQ.paf6YFnETH10TOGqZ5MKvOkZc1T6gIEwjL3tspXdgGI' \
+--data '{"query":"{ customers(page: 1) { customers { customerNumber, customerName, phone }, total, page, token } }","variables":{}}'
 ```
 
 ### Response
