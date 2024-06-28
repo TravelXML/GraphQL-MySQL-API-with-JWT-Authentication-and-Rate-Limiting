@@ -245,6 +245,9 @@ We implement pagination using page numbers and a fixed page size. The client spe
   }
 }
 ```
+### Response
+
+![image](https://github.com/TravelXML/GraphQL-MySQL-API-with-JWT-Authentication-and-Rate-Limiting/assets/8361967/4e51fde7-fd8f-456b-b886-f04f8264f20e)
 
 ### Example Query for Customers
 
@@ -280,7 +283,9 @@ curl --location 'http://localhost/api.php' \
 
 ### Response
 
-![image](https://github.com/TravelXML/GraphQL-MySQL-API-with-JWT-Authentication-and-Rate-Limiting/assets/8361967/4e51fde7-fd8f-456b-b886-f04f8264f20e)
+![image](https://github.com/TravelXML/GraphQL-MySQL-API-with-JWT-Authentication-and-Rate-Limiting/assets/8361967/b7ca58ab-3494-4d7d-8c1a-b11bc941d837)
+
+
 
 ## Troubleshooting
 
