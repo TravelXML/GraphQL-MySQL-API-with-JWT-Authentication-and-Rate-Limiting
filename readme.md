@@ -2,19 +2,23 @@
 
 A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. This project leverages Docker for containerization, providing a seamless development and deployment experience. Key features include JWT-based authentication, comprehensive rate limiting, and support for dynamic queries across multiple database tables.
 
+
 ## Features
-**GraphQL API:** Leverage the power of GraphQL for efficient data querying and mutation.
-**JWT Authentication:** Secure your API with JSON Web Tokens, ensuring that only authenticated users can access your endpoints.
-**Rate Limiting:** Prevent abuse by limiting the number of requests per user within a specified timeframe using Redis.
-**Dynamic Querying:** Automatically generate queries for all available database tables, making your API flexible and powerful.
-**Dockerized Setup:** Easily set up and run your application using Docker and Docker Compose, ensuring a consistent development environment.
-**High Performance:** Optimized for performance with caching and efficient database querying.
+
+- **GraphQL API**: Leverage the power of GraphQL for efficient data querying and mutation.
+- **JWT Authentication**: Secure your API with JSON Web Tokens, ensuring that only authenticated users can access your endpoints.
+- **Rate Limiting**: Prevent abuse by limiting the number of requests per user within a specified timeframe using Redis.
+- **Dynamic Querying**: Automatically generate queries for all available database tables, making your API flexible and powerful.
+- **Dockerized Setup**: Easily set up and run your application using Docker and Docker Compose, ensuring a consistent development environment.
+- **High Performance**: Optimized for performance with caching and efficient database querying.
+
 ## Why Use This Project?
-**Security:** Protect your API endpoints with JWT authentication.
-**Scalability:** Built to handle a large number of requests with rate limiting.
-**Flexibility:** Supports dynamic querying, making it adaptable to various use cases.
-**Ease of Use:** Simple setup and deployment with Docker.
-**Community and Support:** Join a growing community of developers and gain support through GitHub Issues and Pull Requests.
+
+- **Security**: Protect your API endpoints with JWT authentication.
+- **Scalability**: Built to handle a large number of requests with rate limiting.
+- **Flexibility**: Supports dynamic querying, making it adaptable to various use cases.
+- **Ease of Use**: Simple setup and deployment with Docker.
+- **Community and Support**: Join a growing community of developers and gain support through GitHub Issues and Pull Requests.
 
 
 ## Table of Contents
