@@ -2,6 +2,8 @@
 
 A robust, scalable, and secure GraphQL API built with PHP, MySQL, and Redis. This project leverages Docker for containerization, providing a seamless development and deployment experience. Key features include JWT-based authentication, comprehensive rate limiting, and support for dynamic queries across multiple database tables. The API dynamically exposes services based on the RDBMS database and table structures, making it highly adaptable and flexible.
 
+![GraphQL_MySQL_API_GitHub_Cover](https://github.com/TravelXML/GraphQL-MySQL-API-with-JWT-Authentication-and-Rate-Limiting/assets/8361967/51fe0794-30b1-47a8-a3ac-ad021e8f3dfb)
+
 
 ## Features
 
